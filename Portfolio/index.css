@@ -1,0 +1,334 @@
+*{
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: capitalize;
+}
+html{
+    scroll-behavior: smooth;
+    background-color: rgb(235, 229, 229);
+    background-color: rgb(56, 47, 47);
+}
+
+/*                                header */
+header{
+    width: 100%;
+    min-width: 200px;
+    background-color: white;
+    box-shadow: 3px 0px 10px -6px black;
+    position: sticky;
+    top: 0px;
+    z-index: 999999;
+}
+/* div.profile-menu */
+header div.profile-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-radius: 4px;
+}
+
+/* div.menu */
+
+header div.menu {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+  
+}
+header div.menu >div{
+    width: 100%;
+    height: 6px;
+    background-color: rgb(29, 27, 27);
+    margin: 2px 0px;
+    transition: transform .3s linear;
+}
+header div.menu.cross div:nth-child(1){
+    transform: rotate(45deg) translateY(7px);
+}
+header div.menu.cross div:nth-child(2){
+    display: none;
+}
+header div.menu.cross div:nth-child(3){
+    transform: rotate(-45deg) translateY(-7px);
+}
+
+/* header-nav */
+header nav{
+    border: solid 1px grey;
+    display: none;
+    transform: translateY(-50px);
+    opacity: 0;
+    background-color: white;
+    transition: transform .4s ease-out,opacity 1s linear ;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+}
+header nav.display-block{
+    display: block;
+}
+header nav.display-block.active{
+opacity: 1;
+transform: translateY(0px);
+}
+header nav ul{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+header nav ul li{
+list-style: none;
+margin: 10px 0px;
+
+}
+header nav ul li.active{
+    padding: 4px;
+    border-radius: 4px;
+    background-color: burlywood;
+    color: white;
+}
+header nav ul li.active a{
+    color: rgb(4, 14, 32);
+    font-weight: bolder;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+header nav ul li:hover a{
+    color: blue;
+    cursor: pointer;
+}
+/*                                 section common*/
+section{
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    flex-direction: column;
+    margin: 20px 0px 20px 0px;
+    background-color: white;
+}
+section.active{
+    /* background-color: red; */
+    opacity: .2;
+}
+
+section h2 ~ div{
+ margin-top: 20px;
+}
+/*                     section#home */
+section#section-home{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: center;
+
+}
+
+div.myimg {
+    min-width: 100px;
+    width: 24vw;
+}
+div.myimg img{
+    width: 100%;
+    border-radius: 50%;
+    /* object-fit: contain; */
+}
+div.myname{
+    display: flex;
+    border: solid 1px grey;
+    flex-direction: column;
+    min-height: 100px;
+    justify-content: center;
+    padding: 10px;
+
+}
+div.myname >div{
+    display: flex;
+}
+
+/*                      section#skill */
+/* div.skill */
+div.div-skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+/* div.row-skill */
+div.row-skill{
+    margin: 10px 0px;
+    position: relative;
+}
+
+div.row-skill ul{
+    display: none;
+    transform: translateY(-50px);
+    opacity: 0;
+    background-color: white;
+    transition: transform .4s ease-out,opacity 1s linear ;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    min-height: 50px;
+    border: solid 1px grey;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+div.row-skill:nth-child(2) ul{
+    z-index: 10;
+}
+div.row-skill:nth-child(3) ul{
+    z-index: 9;
+}
+div.row-skill ul.display-block{
+    display: flex;
+}
+div.row-skill ul.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+div.row-skill ul li{
+    list-style: none;
+    text-align: center;
+}
+/* div.row */
+div.row {
+    display: flex;
+    gap: 5px;
+}
+div.row .right-angle{
+    align-self: flex-end;
+    width: 15px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+div.row .right-angle.rotate-90deg{
+    transform: rotateZ(90deg);
+}
+
+/* progress */
+div.progress{
+    width: 40vw;
+    min-width: 200px;
+    min-height: 13px;
+    position: relative;
+    border: solid 1px grey;
+    position: relative;
+}
+div.progress::after{
+    content: '';
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    background-color: rgb(8, 8, 8);
+}
+div.row-skill:nth-child(1) div.progress::after{
+    width: 100%;    
+}
+div.row-skill:nth-child(2) div.progress::after{
+    width: 88%;    
+}
+div.row-skill:nth-child(3) div.progress::after{
+    width: 80%;
+}
+p.percentage{
+    position: absolute;
+    left: 95%;
+    bottom: 100%;
+}
+/*            section#contact */
+/* div.contact-form */
+div.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* div.email-tel */
+div.email-tel{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin: 20px 0px;
+}
+div.email-tel p{font-size: 12px;}
+
+div.email-tel >div{
+    min-width: 200px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* form */
+form{
+    display: grid;
+    grid-template-rows: repeat(4,50px);
+    /* align-items: center; */
+    /* align-content: center; */
+}
+form input:not([type='radio']){
+    width: 40vw;
+    min-width: 200px;
+    margin: 10px 0px;
+}
+form button{
+    justify-self: center;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 3px 5px;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*                                         footer */
+
+footer{
+    min-height: 50vh;  
+    background-color: rgb(28, 25, 25);
+    margin: 5px 0px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 3px;
+}
+footer h3{
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width:400px) {
+    h1{
+        font-size: 20px;
+    }
+    p{
+        font-size: 10px;
+    }
+    footer h3{
+        font-size: 10px;
+    }
+
+}
