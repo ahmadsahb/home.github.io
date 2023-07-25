@@ -157,6 +157,7 @@ div.myname{
 }
 div.myname >div{
     display: flex;
+    align-items: center;
 }
 
 /*                      section#skill */
